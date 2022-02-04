@@ -1,5 +1,5 @@
 # gh-find-current-pr
-
+Test
 This action tries to figure out the current PR.
 
 If the event is a `pull_request`, it's very easy to get the current PR number
