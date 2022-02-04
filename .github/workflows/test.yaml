@@ -1,0 +1,21 @@
+name: .NET Core
+on:
+  push:
+    branches: [ master, release/** ]
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    timeout-minutes: 10
+    steps:
+       - name: Find PR for the Commit
+         uses: jwalton/gh-find-current-pr@v1
+         continue-on-error: true
+         if: ${{ github.event_name == 'push' }}
+         id: findPr
+         with:
+           state: all
+           
+       - name: Echo
+         run : |
+          echo ${{ steps.findPr.outputs.pr_info }}
