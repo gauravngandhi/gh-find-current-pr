@@ -18,5 +18,17 @@ jobs:
            
        - name: Echo
          run : |
+          pr_info_json=${{ steps.findPr.outputs.pr_info }}
           echo ${{ steps.findPr.outputs.pr_info.user.login }}
           echo ${{ steps.findPr.outputs.title }}
+      
+       - name: Json Action
+         id: format_script
+         uses: notiz-dev/github-action-json-property@0.1.0
+         with: 
+            path: ${{ steps.findPr.outputs.pr_info }}
+            prop_path: pr_info.user
+            
+       - name: Echo
+         run : |
+          echo ${{ steps.format_script.outputs.prop }}
