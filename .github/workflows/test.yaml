@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 10
     steps:
        - name: Find PR for the Commit
-         uses: jwalton/gh-find-current-pr@v1
+         uses: gauravngandhi/gh-find-current-pr@master
          continue-on-error: true
          if: ${{ github.event_name == 'push' }}
          id: findPr
@@ -19,3 +19,4 @@ jobs:
        - name: Echo
          run : |
           echo ${{ steps.findPr.outputs.pr_info }}
+          echo ${{ steps.findPr.outputs.title }}
