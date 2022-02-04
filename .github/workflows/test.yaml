@@ -24,7 +24,7 @@ jobs:
       
        - name: Json Action
          id: format_script
-         uses: notiz-dev/github-action-json-property@0.1.0
+         uses: notiz-dev/github-action-json-property@release
          with: 
             path: ${{ steps.findPr.outputs.pr_info }}
             prop_path: pr_info.user
