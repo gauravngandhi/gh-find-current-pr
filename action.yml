@@ -23,6 +23,8 @@ outputs:
     description: The PR's title if the PR was found
   body:
     description: The PR's body if the PR was found
+   pr_info:
+    description: Pull Request full info
 runs:
   using: node12
   main: 'main.js'
