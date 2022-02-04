@@ -24,6 +24,7 @@ async function main() {
     core.info(`Setting output: title: ${(pr && pr.title) || ''}`);
     core.setOutput('title', (pr && pr.title) || '');
     core.setOutput('body', (pr && pr.body) || '');
+    core.setOutput('pr_info', (pr) || '');
 }
 
 main().catch((err) => core.setFailed(err.message));
