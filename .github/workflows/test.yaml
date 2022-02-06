@@ -21,6 +21,7 @@ jobs:
           pr_info_json=${{ steps.findPr.outputs.pr_info }}
           echo ${{ steps.findPr.outputs.pr_info.user.login }}
           echo ${{ steps.findPr.outputs.title }}
+          echo ${{ fromJson(steps.findPr.outputs.pr_info).user }}
       
        - name: Json Action
          id: format_script
